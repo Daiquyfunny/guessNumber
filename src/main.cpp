@@ -8,8 +8,13 @@ int main() {
     std::mt19937 mt{static_cast<std::mt19937::result_type>(
                             std::chrono::steady_clock::now().time_since_epoch().count()
                     )};
-    int init = userinputI("\nInitial number: ");
-    int end = userinputI("\nEnd number: ");
+    int init;
+    int end;
+    
+    do {
+        init = userinputI("\nInitial number: ");
+        end = userinputI("\nEnd number: ");
+    } while (init >= end);
 
     std::uniform_int_distribution range{init, end};
     int randX = range(mt);
