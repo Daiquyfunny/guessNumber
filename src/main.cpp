@@ -19,7 +19,7 @@ int main() {
     std::uniform_int_distribution range{init, end};
     int randX = range(mt);
     cout << "Guess the number is between " << init << " to " << end;
-    int guess = userinputI("\n\nguess the number: ");
+    int guess = userinputI("\n\nGuess the number: ");
     if (guess == randX) {
         cout << "Correct";
     } else {
